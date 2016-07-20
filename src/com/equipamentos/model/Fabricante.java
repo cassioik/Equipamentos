@@ -21,6 +21,7 @@ public class Fabricante {
 	@Column(length=45, nullable=false)
 	private String nome;
 	
+	@Column(nullable=false, unique=true)
 	private Integer cnpj;
 	
 	@ManyToMany(mappedBy="fabricantes")

@@ -19,7 +19,7 @@ public class Inspecao {
 	@Column(name="inspecao_id", updatable=false)
 	private Long id;
 	
-	@Column(nullable=false)
+	@Column(nullable=false, unique=true)
 	private Date dataInspecao;
 	
 	@Column(length=200, nullable=false)

@@ -21,7 +21,7 @@ public class Inspetor {
 	@Column(length=45, nullable=false)
 	private String nome;
 	
-	@Column(nullable=false)
+	@Column(nullable=false, unique=true)
 	private Long cpf;
 	
 	@OneToMany(mappedBy="inspetor")
