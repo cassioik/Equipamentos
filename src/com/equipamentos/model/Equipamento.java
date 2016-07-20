@@ -21,7 +21,7 @@ public class Equipamento {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="equipamento_id", updatable=false)
-	private Integer id;
+	private Long id;
 	
 	@Column(length=45, nullable=false)
 	private String nome;
@@ -41,10 +41,10 @@ public class Equipamento {
 	@OneToMany(mappedBy="equipamento", fetch=FetchType.EAGER)
 	private Set<SerieTemporal> seriesTemporais;
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNome() {

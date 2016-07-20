@@ -17,7 +17,7 @@ public class PontoSerieTemporal {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="pontoserietemporal_id", updatable=false)
-	private Integer id;
+	private Long id;
 	
 	@Column(nullable=false)
 	private Date datahoramedicao;
@@ -29,10 +29,10 @@ public class PontoSerieTemporal {
 	@Column(nullable=false)
 	private Double valor;
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public Date getDatahoramedicao() {

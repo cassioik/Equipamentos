@@ -17,7 +17,7 @@ public class Inspecao {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="inspecao_id", updatable=false)
-	private Integer id;
+	private Long id;
 	
 	@Column(nullable=false)
 	private Date dataInspecao;
@@ -33,11 +33,11 @@ public class Inspecao {
 	@JoinColumn(name = "equipamento_id", insertable = false, updatable = false)
 	private Equipamento equipamento;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

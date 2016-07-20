@@ -16,7 +16,7 @@ public class Inspetor {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="inspetor_id", updatable=false)
-	private Integer id;
+	private Long id;
 	
 	@Column(length=45, nullable=false)
 	private String nome;
@@ -27,10 +27,10 @@ public class Inspetor {
 	@OneToMany(mappedBy="inspetor")
 	private List<Inspecao> Inspecoes;
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNome() {

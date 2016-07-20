@@ -8,6 +8,7 @@ import com.equipamentos.dao.GenericDAO;
 import com.equipamentos.dao.InspetorDAO;
 import com.equipamentos.facade.EquipamentoFacade;
 import com.equipamentos.facade.InspetorFacade;
+import com.equipamentos.facade.SerieTemporalFacade;
 import com.equipamentos.model.Equipamento;
 import com.equipamentos.model.Inspecao;
 import com.equipamentos.model.Inspetor;
@@ -34,10 +35,24 @@ public class Main {
 			System.out.println(i.getNome());*/
 			
 			
-			EquipamentoFacade facade = new EquipamentoFacade();
+			/*EquipamentoFacade facade = new EquipamentoFacade();
 			List<Equipamento> e = facade.listarEquipamentosNaoInspecionados();
 			for(Equipamento q:e){
 				System.out.println(q.getNome());
+			}*/
+			
+			
+			/*EquipamentoFacade facade = new EquipamentoFacade();
+			List<Equipamento> e = facade.listarEquipamentosInspecionadosPor(1L);
+			for(Equipamento q:e){
+				System.out.println(q.getNome());
+			}*/
+			
+			
+			SerieTemporalFacade facade = new SerieTemporalFacade();
+			List<SerieTemporal> s = facade.listarSeriesTemporais(null, 0L);
+			for(SerieTemporal st:s){
+				System.out.println(st.getNomeSerie());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

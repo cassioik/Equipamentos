@@ -1,5 +1,7 @@
 package com.equipamentos.facade;
 
+import java.util.List;
+
 import com.equipamentos.dao.SerieTemporalDAO;
 import com.equipamentos.model.SerieTemporal;
 
@@ -46,6 +48,18 @@ private SerieTemporalDAO dao = new SerieTemporalDAO();
 			SerieTemporal serieTemporal = dao.findReferenceOnly(id);
 			dao.delete(serieTemporal);
 			dao.commitAndCloseTransaction();
+		} catch (Exception e) {
+			dao.rollbackAndCloseTransaction();
+			throw e;
+		}
+	}
+	
+	public List<SerieTemporal> listarSeriesTemporais(String unidadeMedidaID, Long idEquipamento) throws Exception {
+		try {
+			dao.beginTransaction();
+			List<SerieTemporal> serieTemporal = dao.listarSeriesTemporais(unidadeMedidaID, idEquipamento);
+			dao.commitAndCloseTransaction();
+			return serieTemporal;
 		} catch (Exception e) {
 			dao.rollbackAndCloseTransaction();
 			throw e;

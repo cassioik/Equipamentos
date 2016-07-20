@@ -65,4 +65,16 @@ public class EquipamentoFacade {
 			throw e;
 		}
 	}
+	
+	public List<Equipamento> listarEquipamentosInspecionadosPor(Long idInspetor){
+		try {
+			dao.beginTransaction();
+			List<Equipamento> equipamentos = dao.listarEquipamentosInspecionadosPor(idInspetor);
+			dao.commitAndCloseTransaction();
+			return equipamentos;
+		} catch (Exception e) {
+			dao.rollbackAndCloseTransaction();
+			throw e;
+		}
+	}
 }

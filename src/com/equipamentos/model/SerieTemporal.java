@@ -18,7 +18,7 @@ public class SerieTemporal {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="serietemporal_id", updatable=false)
-	private Integer id;
+	private Long id;
 	
 	@Column(length=45, nullable=false)
 	private String nomeSerie;
@@ -34,10 +34,10 @@ public class SerieTemporal {
 	@OneToMany(mappedBy="serietemporal") 
 	private List<PontoSerieTemporal> pontos;
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNomeSerie() {
